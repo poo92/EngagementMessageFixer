@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8753ab3df40649aeb666397ad103796f" Name="Diagram1">
+        <EntityTypeShape EntityType="IdentityNewModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityNewModel.Application" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityNewModel.ApplicationAccess" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityNewModel.Edition" Width="1.5" PointX="0.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityNewModel.EditionFeature" Width="1.5" PointX="3" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityNewModel.Engagement" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityNewModel.EngagementApplication" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityNewModel.Operator" Width="1.5" PointX="6" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityNewModel.OperatorCredential" Width="1.5" PointX="8.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityNewModel.OperatorEngagement" Width="1.5" PointX="11.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityNewModel.OperatorEngagementApplicationRole" Width="1.5" PointX="8.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityNewModel.OperatorEngagementRole" Width="1.5" PointX="8.25" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityNewModel.PasswordPolicy" Width="1.5" PointX="11.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityNewModel.Role" Width="1.5" PointX="6" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityNewModel.SamlIdpConfig" Width="1.5" PointX="11.25" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdentityNewModel.SamlSpConfig" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_Editions_dbo_Application_ApplicationId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_EngagementApplication_dbo_Application_ApplicationId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_OperatorEngagementApplicationRole_dbo_Application_ApplicationId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_ApplicationAccess_dbo_SamlSpConfig_ApplicationAccessId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_EditionFeature_dbo_Edition_EditionId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_EngagementApplication_dbo_Edition_EditionId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_Engagement_dbo_PasswordPolicy_PasswordPolicyId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_Engagement_dbo_SamlIdpConfig_SamlIdpConfigId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_EngagementApplication_dbo_Engagement_EngagementId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_Operator_dbo_Engagement_MasterEngagementId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_OperatorEngagement_dbo_Engagement_EngagementId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_OperatorEngagementApplicationRole_dbo_Engagement_EngagementId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_OperatorEngagementRole_dbo_Engagement_EngagementId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_PasswordPolicy_dbo_Engagement_EngagementId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_SamlIdpConfig_dbo_Engagement_EngagementId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_Operator_dbo_PasswordPolicy_PasswordPolicyId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_Operator_dbo_SamlIdpConfig_SamlIdpConfigId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_OperatorCredential_dbo_Operator_OperatorId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_OperatorEngagement_dbo_Operator_OperatorId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_OperatorEngagementApplicationRole_dbo_Operator_OperatorId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_OperatorEngagementRole_dbo_Operator_OperatorId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_PasswordPolicy_dbo_Operator_OperatorId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_SamlIdpConfig_dbo_Operator_OperatorId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_OperatorEngagementApplicationRole_dbo_Role_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="IdentityNewModel.FK_dbo_OperatorEngagementRole_dbo_Role_RoleId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

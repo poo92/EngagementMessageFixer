@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IdentityNewModelStoreContainer" CdmEntityContainer="Identity">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="IdentityNewModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="IdentityNewModel.Application">
+        <MappingFragment StoreEntitySet="Application">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+          <ScalarProperty Name="AppUniqueId" ColumnName="AppUniqueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicationAccesses">
+      <EntityTypeMapping TypeName="IdentityNewModel.ApplicationAccess">
+        <MappingFragment StoreEntitySet="ApplicationAccess">
+          <ScalarProperty Name="ApplicationAccessId" ColumnName="ApplicationAccessId" />
+          <ScalarProperty Name="ApplicationUri" ColumnName="ApplicationUri" />
+          <ScalarProperty Name="AppUniqueId" ColumnName="AppUniqueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Editions">
+      <EntityTypeMapping TypeName="IdentityNewModel.Edition">
+        <MappingFragment StoreEntitySet="Edition">
+          <ScalarProperty Name="EditionId" ColumnName="EditionId" />
+          <ScalarProperty Name="EditionName" ColumnName="EditionName" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EditionFeatures">
+      <EntityTypeMapping TypeName="IdentityNewModel.EditionFeature">
+        <MappingFragment StoreEntitySet="EditionFeature">
+          <ScalarProperty Name="EditionFeatureId" ColumnName="EditionFeatureId" />
+          <ScalarProperty Name="EditionId" ColumnName="EditionId" />
+          <ScalarProperty Name="FeatureCode" ColumnName="FeatureCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Engagements">
+      <EntityTypeMapping TypeName="IdentityNewModel.Engagement">
+        <MappingFragment StoreEntitySet="Engagement">
+          <ScalarProperty Name="EngagementId" ColumnName="EngagementId" />
+          <ScalarProperty Name="EngagementSettings" ColumnName="EngagementSettings" />
+          <ScalarProperty Name="SamlIdpConfigId" ColumnName="SamlIdpConfigId" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="EngagementName" ColumnName="EngagementName" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="PasswordPolicyId" ColumnName="PasswordPolicyId" />
+          <ScalarProperty Name="TimeZone" ColumnName="TimeZone" />
+          <ScalarProperty Name="TestEngagement" ColumnName="TestEngagement" />
+          <ScalarProperty Name="EngagementKey" ColumnName="EngagementKey" />
+          <ScalarProperty Name="LicenseString" ColumnName="LicenseString" />
+          <ScalarProperty Name="SessionTimeOut" ColumnName="SessionTimeOut" />
+          <ScalarProperty Name="SessionTimeoutSetting" ColumnName="SessionTimeoutSetting" />
+          <ScalarProperty Name="EngagementLogo" ColumnName="EngagementLogo" />
+          <ScalarProperty Name="EngagementGuid" ColumnName="EngagementGuid" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EngagementApplications">
+      <EntityTypeMapping TypeName="IdentityNewModel.EngagementApplication">
+        <MappingFragment StoreEntitySet="EngagementApplication">
+          <ScalarProperty Name="EngagementId" ColumnName="EngagementId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="EditionType" ColumnName="EditionType" />
+          <ScalarProperty Name="EditionId" ColumnName="EditionId" />
+          <ScalarProperty Name="LightUser" ColumnName="LightUser" />
+          <ScalarProperty Name="SubscriptionEndDate" ColumnName="SubscriptionEndDate" />
+          <ScalarProperty Name="EngagementGuid" ColumnName="EngagementGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Operators">
+      <EntityTypeMapping TypeName="IdentityNewModel.Operator">
+        <MappingFragment StoreEntitySet="Operator">
+          <ScalarProperty Name="OperatorId" ColumnName="OperatorId" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+          <ScalarProperty Name="Info" ColumnName="Info" />
+          <ScalarProperty Name="Culture" ColumnName="Culture" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="Superuser" ColumnName="Superuser" />
+          <ScalarProperty Name="GlobalVisible" ColumnName="GlobalVisible" />
+          <ScalarProperty Name="SamlIdpConfigId" ColumnName="SamlIdpConfigId" />
+          <ScalarProperty Name="MasterEngagementId" ColumnName="MasterEngagementId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TimeZone" ColumnName="TimeZone" />
+          <ScalarProperty Name="PasswordPolicyId" ColumnName="PasswordPolicyId" />
+          <ScalarProperty Name="FailedLoginCount" ColumnName="FailedLoginCount" />
+          <ScalarProperty Name="LastFailedLoginTimestamp" ColumnName="LastFailedLoginTimestamp" />
+          <ScalarProperty Name="ActivationEmailSent" ColumnName="ActivationEmailSent" />
+          <ScalarProperty Name="BalancerLastLoginTimestamp" ColumnName="BalancerLastLoginTimestamp" />
+          <ScalarProperty Name="TaskManagerLastLoginTimestamp" ColumnName="TaskManagerLastLoginTimestamp" />
+          <ScalarProperty Name="OperatorGuid" ColumnName="OperatorGuid" />
+          <ScalarProperty Name="MasterEngagementGuid" ColumnName="MasterEngagementGuid" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OperatorCredentials">
+      <EntityTypeMapping TypeName="IdentityNewModel.OperatorCredential">
+        <MappingFragment StoreEntitySet="OperatorCredential">
+          <ScalarProperty Name="OperatorCredentialId" ColumnName="OperatorCredentialId" />
+          <ScalarProperty Name="OperatorId" ColumnName="OperatorId" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="ChangedDateTime" ColumnName="ChangedDateTime" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="OperatorGuid" ColumnName="OperatorGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OperatorEngagements">
+      <EntityTypeMapping TypeName="IdentityNewModel.OperatorEngagement">
+        <MappingFragment StoreEntitySet="OperatorEngagement">
+          <ScalarProperty Name="OperatorId" ColumnName="OperatorId" />
+          <ScalarProperty Name="EngagementId" ColumnName="EngagementId" />
+          <ScalarProperty Name="OperatorEngagementGuid" ColumnName="OperatorEngagementGuid" />
+          <ScalarProperty Name="OperatorGuid" ColumnName="OperatorGuid" />
+          <ScalarProperty Name="EngagementGuid" ColumnName="EngagementGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OperatorEngagementApplicationRoles">
+      <EntityTypeMapping TypeName="IdentityNewModel.OperatorEngagementApplicationRole">
+        <MappingFragment StoreEntitySet="OperatorEngagementApplicationRole">
+          <ScalarProperty Name="OperatorId" ColumnName="OperatorId" />
+          <ScalarProperty Name="EngagementId" ColumnName="EngagementId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="OperatorGuid" ColumnName="OperatorGuid" />
+          <ScalarProperty Name="EngagementGuid" ColumnName="EngagementGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OperatorEngagementRoles">
+      <EntityTypeMapping TypeName="IdentityNewModel.OperatorEngagementRole">
+        <MappingFragment StoreEntitySet="OperatorEngagementRole">
+          <ScalarProperty Name="OperatorId" ColumnName="OperatorId" />
+          <ScalarProperty Name="EngagementId" ColumnName="EngagementId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="OperatorGuid" ColumnName="OperatorGuid" />
+          <ScalarProperty Name="EngagementGuid" ColumnName="EngagementGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PasswordPolicies">
+      <EntityTypeMapping TypeName="IdentityNewModel.PasswordPolicy">
+        <MappingFragment StoreEntitySet="PasswordPolicy">
+          <ScalarProperty Name="PasswordPolicyId" ColumnName="PasswordPolicyId" />
+          <ScalarProperty Name="MinLength" ColumnName="MinLength" />
+          <ScalarProperty Name="UpperCaseLength" ColumnName="UpperCaseLength" />
+          <ScalarProperty Name="LowerCaseLength" ColumnName="LowerCaseLength" />
+          <ScalarProperty Name="SpecialCharLength" ColumnName="SpecialCharLength" />
+          <ScalarProperty Name="NumericLength" ColumnName="NumericLength" />
+          <ScalarProperty Name="ExpirationAgeDays" ColumnName="ExpirationAgeDays" />
+          <ScalarProperty Name="PasswordHistory" ColumnName="PasswordHistory" />
+          <ScalarProperty Name="PasswordPolicyName" ColumnName="PasswordPolicyName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EngagementId" ColumnName="EngagementId" />
+          <ScalarProperty Name="OperatorId" ColumnName="OperatorId" />
+          <ScalarProperty Name="LockoutThreshold" ColumnName="LockoutThreshold" />
+          <ScalarProperty Name="LockoutDuration" ColumnName="LockoutDuration" />
+          <ScalarProperty Name="LockoutResetCounterWindow" ColumnName="LockoutResetCounterWindow" />
+          <ScalarProperty Name="EngagementGuid" ColumnName="EngagementGuid" />
+          <ScalarProperty Name="OperatorGuid" ColumnName="OperatorGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="IdentityNewModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SamlIdpConfigs">
+      <EntityTypeMapping TypeName="IdentityNewModel.SamlIdpConfig">
+        <MappingFragment StoreEntitySet="SamlIdpConfig">
+          <ScalarProperty Name="SamlIdpConfigId" ColumnName="SamlIdpConfigId" />
+          <ScalarProperty Name="AssertionConsumerServiceUrl" ColumnName="AssertionConsumerServiceUrl" />
+          <ScalarProperty Name="SignAuthnRequest" ColumnName="SignAuthnRequest" />
+          <ScalarProperty Name="WantSamlResponseSigned" ColumnName="WantSamlResponseSigned" />
+          <ScalarProperty Name="WantAssertionSigned" ColumnName="WantAssertionSigned" />
+          <ScalarProperty Name="WantAssertionEncrypted" ColumnName="WantAssertionEncrypted" />
+          <ScalarProperty Name="UseEmbeddedCertificate" ColumnName="UseEmbeddedCertificate" />
+          <ScalarProperty Name="SignLogoutRequest" ColumnName="SignLogoutRequest" />
+          <ScalarProperty Name="SingleSignOnServiceUrl" ColumnName="SingleSignOnServiceUrl" />
+          <ScalarProperty Name="SingleLogoutServiceUrl" ColumnName="SingleLogoutServiceUrl" />
+          <ScalarProperty Name="ClockSkew" ColumnName="ClockSkew" />
+          <ScalarProperty Name="SamlIdpName" ColumnName="SamlIdpName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EngagementId" ColumnName="EngagementId" />
+          <ScalarProperty Name="OperatorId" ColumnName="OperatorId" />
+          <ScalarProperty Name="Certificate" ColumnName="Certificate" />
+          <ScalarProperty Name="WantDigestAlgorithm" ColumnName="WantDigestAlgorithm" />
+          <ScalarProperty Name="WantSignatureAlgorithm" ColumnName="WantSignatureAlgorithm" />
+          <ScalarProperty Name="EngagementGuid" ColumnName="EngagementGuid" />
+          <ScalarProperty Name="OperatorGuid" ColumnName="OperatorGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SamlSpConfigs">
+      <EntityTypeMapping TypeName="IdentityNewModel.SamlSpConfig">
+        <MappingFragment StoreEntitySet="SamlSpConfig">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="WantAuthnRequestSigned" ColumnName="WantAuthnRequestSigned" />
+          <ScalarProperty Name="SignSamlResponse" ColumnName="SignSamlResponse" />
+          <ScalarProperty Name="SignAssertion" ColumnName="SignAssertion" />
+          <ScalarProperty Name="EncryptAssertion" ColumnName="EncryptAssertion" />
+          <ScalarProperty Name="AssertionConsumerServiceUrl" ColumnName="AssertionConsumerServiceUrl" />
+          <ScalarProperty Name="SingleLogoutServiceUrl" ColumnName="SingleLogoutServiceUrl" />
+          <ScalarProperty Name="CertificateFile" ColumnName="CertificateFile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

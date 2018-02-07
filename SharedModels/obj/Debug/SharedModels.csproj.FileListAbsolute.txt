@@ -1,0 +1,8 @@
+C:\Users\poornimak\source\repos\EngagementMessageFixer\SharedModels\bin\Debug\SharedModels.dll
+C:\Users\poornimak\source\repos\EngagementMessageFixer\SharedModels\bin\Debug\SharedModels.pdb
+C:\Users\poornimak\source\repos\EngagementMessageFixer\SharedModels\obj\Debug\SharedModels.csprojResolveAssemblyReference.cache
+C:\Users\poornimak\source\repos\EngagementMessageFixer\SharedModels\obj\Debug\SharedModels.csproj.CoreCompileInputs.cache
+C:\Users\poornimak\source\repos\EngagementMessageFixer\SharedModels\obj\Debug\SharedModels.dll
+C:\Users\poornimak\source\repos\EngagementMessageFixer\SharedModels\obj\Debug\SharedModels.pdb
+C:\Users\poornimak\source\repos\EngagementMessageFixer\SharedModels\bin\Debug\Newtonsoft.Json.dll
+C:\Users\poornimak\source\repos\EngagementMessageFixer\SharedModels\bin\Debug\Newtonsoft.Json.xml

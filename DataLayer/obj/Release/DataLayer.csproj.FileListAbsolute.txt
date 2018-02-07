@@ -1,0 +1,15 @@
+C:\Users\poornimak\source\repos\EngagementMessageFixer\DataLayer\bin\Release\DataLayer.dll.config
+C:\Users\poornimak\source\repos\EngagementMessageFixer\DataLayer\bin\Release\DataLayer.dll
+C:\Users\poornimak\source\repos\EngagementMessageFixer\DataLayer\bin\Release\DataLayer.pdb
+C:\Users\poornimak\source\repos\EngagementMessageFixer\DataLayer\bin\Release\EntityFramework.dll
+C:\Users\poornimak\source\repos\EngagementMessageFixer\DataLayer\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\poornimak\source\repos\EngagementMessageFixer\DataLayer\bin\Release\SharedModels.dll
+C:\Users\poornimak\source\repos\EngagementMessageFixer\DataLayer\bin\Release\Newtonsoft.Json.dll
+C:\Users\poornimak\source\repos\EngagementMessageFixer\DataLayer\bin\Release\SharedModels.pdb
+C:\Users\poornimak\source\repos\EngagementMessageFixer\DataLayer\bin\Release\EntityFramework.xml
+C:\Users\poornimak\source\repos\EngagementMessageFixer\DataLayer\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\poornimak\source\repos\EngagementMessageFixer\DataLayer\bin\Release\Newtonsoft.Json.xml
+C:\Users\poornimak\source\repos\EngagementMessageFixer\DataLayer\obj\Release\DataLayer.csprojResolveAssemblyReference.cache
+C:\Users\poornimak\source\repos\EngagementMessageFixer\DataLayer\obj\Release\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\poornimak\source\repos\EngagementMessageFixer\DataLayer\obj\Release\DataLayer.dll
+C:\Users\poornimak\source\repos\EngagementMessageFixer\DataLayer\obj\Release\DataLayer.pdb

@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IdentityNewModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Application">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationName" Type="nvarchar(max)" />
+    <Property Name="AppUniqueId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ApplicationAccess">
+    <Key>
+      <PropertyRef Name="ApplicationAccessId" />
+    </Key>
+    <Property Name="ApplicationAccessId" Type="int" Nullable="false" />
+    <Property Name="ApplicationUri" Type="nvarchar(max)" />
+    <Property Name="AppUniqueId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Edition">
+    <Key>
+      <PropertyRef Name="EditionId" />
+    </Key>
+    <Property Name="EditionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EditionName" Type="nvarchar(max)" />
+    <Property Name="ApplicationId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EditionFeature">
+    <Key>
+      <PropertyRef Name="EditionFeatureId" />
+    </Key>
+    <Property Name="EditionFeatureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EditionId" Type="int" Nullable="false" />
+    <Property Name="FeatureCode" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Engagement">
+    <Key>
+      <PropertyRef Name="EngagementId" />
+    </Key>
+    <Property Name="EngagementId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EngagementSettings" Type="nvarchar(max)" />
+    <Property Name="SamlIdpConfigId" Type="int" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="EngagementName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerId" Type="nvarchar" MaxLength="60" />
+    <Property Name="PasswordPolicyId" Type="int" />
+    <Property Name="TimeZone" Type="nvarchar(max)" />
+    <Property Name="TestEngagement" Type="bit" Nullable="false" />
+    <Property Name="EngagementKey" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LicenseString" Type="nvarchar(max)" />
+    <Property Name="SessionTimeOut" Type="int" Nullable="false" />
+    <Property Name="SessionTimeoutSetting" Type="int" Nullable="false" />
+    <Property Name="EngagementLogo" Type="nvarchar(max)" />
+    <Property Name="EngagementGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="EngagementApplication">
+    <Key>
+      <PropertyRef Name="EngagementId" />
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="EngagementId" Type="int" Nullable="false" />
+    <Property Name="ApplicationId" Type="int" Nullable="false" />
+    <Property Name="EditionType" Type="int" Nullable="false" />
+    <Property Name="EditionId" Type="int" Nullable="false" />
+    <Property Name="LightUser" Type="bit" Nullable="false" />
+    <Property Name="SubscriptionEndDate" Type="datetime" />
+    <Property Name="EngagementGuid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Operator">
+    <Key>
+      <PropertyRef Name="OperatorId" />
+    </Key>
+    <Property Name="OperatorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="64" />
+    <Property Name="EmployeeNumber" Type="nvarchar" MaxLength="32" />
+    <Property Name="Info" Type="nvarchar" MaxLength="256" />
+    <Property Name="Culture" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Language" Type="nvarchar" MaxLength="10" />
+    <Property Name="Superuser" Type="bit" Nullable="false" />
+    <Property Name="GlobalVisible" Type="bit" Nullable="false" />
+    <Property Name="SamlIdpConfigId" Type="int" />
+    <Property Name="MasterEngagementId" Type="int" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="TimeZone" Type="nvarchar(max)" />
+    <Property Name="PasswordPolicyId" Type="int" />
+    <Property Name="FailedLoginCount" Type="int" Nullable="false" />
+    <Property Name="LastFailedLoginTimestamp" Type="datetime" />
+    <Property Name="ActivationEmailSent" Type="datetime" />
+    <Property Name="BalancerLastLoginTimestamp" Type="datetime" />
+    <Property Name="TaskManagerLastLoginTimestamp" Type="datetime" />
+    <Property Name="OperatorGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MasterEngagementGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="OperatorCredential">
+    <Key>
+      <PropertyRef Name="OperatorCredentialId" />
+    </Key>
+    <Property Name="OperatorCredentialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OperatorId" Type="int" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ChangedDateTime" Type="datetime" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="OperatorGuid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="OperatorEngagement">
+    <Key>
+      <PropertyRef Name="OperatorId" />
+      <PropertyRef Name="EngagementId" />
+    </Key>
+    <Property Name="OperatorId" Type="int" Nullable="false" />
+    <Property Name="EngagementId" Type="int" Nullable="false" />
+    <Property Name="OperatorEngagementGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OperatorGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EngagementGuid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OperatorEngagementApplicationRole">
+    <Key>
+      <PropertyRef Name="OperatorId" />
+      <PropertyRef Name="EngagementId" />
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="OperatorId" Type="int" Nullable="false" />
+    <Property Name="EngagementId" Type="int" Nullable="false" />
+    <Property Name="ApplicationId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="OperatorGuid" Type="uniqueidentifier" />
+    <Property Name="EngagementGuid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OperatorEngagementRole">
+    <Key>
+      <PropertyRef Name="OperatorId" />
+      <PropertyRef Name="EngagementId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="OperatorId" Type="int" Nullable="false" />
+    <Property Name="EngagementId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="OperatorGuid" Type="uniqueidentifier" />
+    <Property Name="EngagementGuid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PasswordPolicy">
+    <Key>
+      <PropertyRef Name="PasswordPolicyId" />
+    </Key>
+    <Property Name="PasswordPolicyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MinLength" Type="int" Nullable="false" />
+    <Property Name="UpperCaseLength" Type="int" Nullable="false" />
+    <Property Name="LowerCaseLength" Type="int" Nullable="false" />
+    <Property Name="SpecialCharLength" Type="int" Nullable="false" />
+    <Property Name="NumericLength" Type="int" Nullable="false" />
+    <Property Name="ExpirationAgeDays" Type="int" Nullable="false" />
+    <Property Name="PasswordHistory" Type="int" Nullable="false" />
+    <Property Name="PasswordPolicyName" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="EngagementId" Type="int" />
+    <Property Name="OperatorId" Type="int" />
+    <Property Name="LockoutThreshold" Type="int" Nullable="false" />
+    <Property Name="LockoutDuration" Type="time" Precision="7" Nullable="false" />
+    <Property Name="LockoutResetCounterWindow" Type="time" Precision="7" Nullable="false" />
+    <Property Name="EngagementGuid" Type="uniqueidentifier" />
+    <Property Name="OperatorGuid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SamlIdpConfig">
+    <Key>
+      <PropertyRef Name="SamlIdpConfigId" />
+    </Key>
+    <Property Name="SamlIdpConfigId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AssertionConsumerServiceUrl" Type="nvarchar(max)" />
+    <Property Name="SignAuthnRequest" Type="bit" Nullable="false" />
+    <Property Name="WantSamlResponseSigned" Type="bit" Nullable="false" />
+    <Property Name="WantAssertionSigned" Type="bit" Nullable="false" />
+    <Property Name="WantAssertionEncrypted" Type="bit" Nullable="false" />
+    <Property Name="UseEmbeddedCertificate" Type="bit" Nullable="false" />
+    <Property Name="SignLogoutRequest" Type="bit" Nullable="false" />
+    <Property Name="SingleSignOnServiceUrl" Type="nvarchar(max)" />
+    <Property Name="SingleLogoutServiceUrl" Type="nvarchar(max)" />
+    <Property Name="ClockSkew" Type="time" Precision="7" />
+    <Property Name="SamlIdpName" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="EngagementId" Type="int" />
+    <Property Name="OperatorId" Type="int" />
+    <Property Name="Certificate" Type="varbinary(max)" />
+    <Property Name="WantDigestAlgorithm" Type="nvarchar(max)" />
+    <Property Name="WantSignatureAlgorithm" Type="nvarchar(max)" />
+    <Property Name="EngagementGuid" Type="uniqueidentifier" />
+    <Property Name="OperatorGuid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="SamlSpConfig">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="WantAuthnRequestSigned" Type="bit" Nullable="false" />
+    <Property Name="SignSamlResponse" Type="bit" Nullable="false" />
+    <Property Name="SignAssertion" Type="bit" Nullable="false" />
+    <Property Name="EncryptAssertion" Type="bit" Nullable="false" />
+    <Property Name="AssertionConsumerServiceUrl" Type="nvarchar(max)" />
+    <Property Name="SingleLogoutServiceUrl" Type="nvarchar(max)" />
+    <Property Name="CertificateFile" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_dbo_ApplicationAccess_dbo_SamlSpConfig_ApplicationAccessId">
+    <End Role="SamlSpConfig" Type="Self.SamlSpConfig" Multiplicity="1" />
+    <End Role="ApplicationAccess" Type="Self.ApplicationAccess" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SamlSpConfig">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="ApplicationAccess">
+        <PropertyRef Name="ApplicationAccessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_EditionFeature_dbo_Edition_EditionId">
+    <End Role="Edition" Type="Self.Edition" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EditionFeature" Type="Self.EditionFeature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Edition">
+        <PropertyRef Name="EditionId" />
+      </Principal>
+      <Dependent Role="EditionFeature">
+        <PropertyRef Name="EditionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Editions_dbo_Application_ApplicationId">
+    <End Role="Application" Type="Self.Application" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Edition" Type="Self.Edition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="Edition">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Engagement_dbo_PasswordPolicy_PasswordPolicyId">
+    <End Role="PasswordPolicy" Type="Self.PasswordPolicy" Multiplicity="0..1" />
+    <End Role="Engagement" Type="Self.Engagement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PasswordPolicy">
+        <PropertyRef Name="PasswordPolicyId" />
+      </Principal>
+      <Dependent Role="Engagement">
+        <PropertyRef Name="PasswordPolicyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Engagement_dbo_SamlIdpConfig_SamlIdpConfigId">
+    <End Role="SamlIdpConfig" Type="Self.SamlIdpConfig" Multiplicity="0..1" />
+    <End Role="Engagement" Type="Self.Engagement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SamlIdpConfig">
+        <PropertyRef Name="SamlIdpConfigId" />
+      </Principal>
+      <Dependent Role="Engagement">
+        <PropertyRef Name="SamlIdpConfigId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_EngagementApplication_dbo_Application_ApplicationId">
+    <End Role="Application" Type="Self.Application" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EngagementApplication" Type="Self.EngagementApplication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="EngagementApplication">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_EngagementApplication_dbo_Edition_EditionId">
+    <End Role="Edition" Type="Self.Edition" Multiplicity="1" />
+    <End Role="EngagementApplication" Type="Self.EngagementApplication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Edition">
+        <PropertyRef Name="EditionId" />
+      </Principal>
+      <Dependent Role="EngagementApplication">
+        <PropertyRef Name="EditionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_EngagementApplication_dbo_Engagement_EngagementId">
+    <End Role="Engagement" Type="Self.Engagement" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EngagementApplication" Type="Self.EngagementApplication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Engagement">
+        <PropertyRef Name="EngagementId" />
+      </Principal>
+      <Dependent Role="EngagementApplication">
+        <PropertyRef Name="EngagementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Operator_dbo_Engagement_MasterEngagementId">
+    <End Role="Engagement" Type="Self.Engagement" Multiplicity="0..1" />
+    <End Role="Operator" Type="Self.Operator" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Engagement">
+        <PropertyRef Name="EngagementId" />
+      </Principal>
+      <Dependent Role="Operator">
+        <PropertyRef Name="MasterEngagementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Operator_dbo_PasswordPolicy_PasswordPolicyId">
+    <End Role="PasswordPolicy" Type="Self.PasswordPolicy" Multiplicity="0..1" />
+    <End Role="Operator" Type="Self.Operator" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PasswordPolicy">
+        <PropertyRef Name="PasswordPolicyId" />
+      </Principal>
+      <Dependent Role="Operator">
+        <PropertyRef Name="PasswordPolicyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Operator_dbo_SamlIdpConfig_SamlIdpConfigId">
+    <End Role="SamlIdpConfig" Type="Self.SamlIdpConfig" Multiplicity="0..1" />
+    <End Role="Operator" Type="Self.Operator" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SamlIdpConfig">
+        <PropertyRef Name="SamlIdpConfigId" />
+      </Principal>
+      <Dependent Role="Operator">
+        <PropertyRef Name="SamlIdpConfigId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_OperatorCredential_dbo_Operator_OperatorId">
+    <End Role="Operator" Type="Self.Operator" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OperatorCredential" Type="Self.OperatorCredential" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operator">
+        <PropertyRef Name="OperatorId" />
+      </Principal>
+      <Dependent Role="OperatorCredential">
+        <PropertyRef Name="OperatorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_OperatorEngagement_dbo_Engagement_EngagementId">
+    <End Role="Engagement" Type="Self.Engagement" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OperatorEngagement" Type="Self.OperatorEngagement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Engagement">
+        <PropertyRef Name="EngagementId" />
+      </Principal>
+      <Dependent Role="OperatorEngagement">
+        <PropertyRef Name="EngagementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_OperatorEngagement_dbo_Operator_OperatorId">
+    <End Role="Operator" Type="Self.Operator" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OperatorEngagement" Type="Self.OperatorEngagement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operator">
+        <PropertyRef Name="OperatorId" />
+      </Principal>
+      <Dependent Role="OperatorEngagement">
+        <PropertyRef Name="OperatorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_OperatorEngagementApplicationRole_dbo_Application_ApplicationId">
+    <End Role="Application" Type="Self.Application" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OperatorEngagementApplicationRole" Type="Self.OperatorEngagementApplicationRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="OperatorEngagementApplicationRole">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_OperatorEngagementApplicationRole_dbo_Engagement_EngagementId">
+    <End Role="Engagement" Type="Self.Engagement" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OperatorEngagementApplicationRole" Type="Self.OperatorEngagementApplicationRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Engagement">
+        <PropertyRef Name="EngagementId" />
+      </Principal>
+      <Dependent Role="OperatorEngagementApplicationRole">
+        <PropertyRef Name="EngagementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_OperatorEngagementApplicationRole_dbo_Operator_OperatorId">
+    <End Role="Operator" Type="Self.Operator" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OperatorEngagementApplicationRole" Type="Self.OperatorEngagementApplicationRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operator">
+        <PropertyRef Name="OperatorId" />
+      </Principal>
+      <Dependent Role="OperatorEngagementApplicationRole">
+        <PropertyRef Name="OperatorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_OperatorEngagementApplicationRole_dbo_Role_RoleId">
+    <End Role="Role" Type="Self.Role" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OperatorEngagementApplicationRole" Type="Self.OperatorEngagementApplicationRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="OperatorEngagementApplicationRole">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_OperatorEngagementRole_dbo_Engagement_EngagementId">
+    <End Role="Engagement" Type="Self.Engagement" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OperatorEngagementRole" Type="Self.OperatorEngagementRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Engagement">
+        <PropertyRef Name="EngagementId" />
+      </Principal>
+      <Dependent Role="OperatorEngagementRole">
+        <PropertyRef Name="EngagementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_OperatorEngagementRole_dbo_Operator_OperatorId">
+    <End Role="Operator" Type="Self.Operator" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OperatorEngagementRole" Type="Self.OperatorEngagementRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operator">
+        <PropertyRef Name="OperatorId" />
+      </Principal>
+      <Dependent Role="OperatorEngagementRole">
+        <PropertyRef Name="OperatorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_OperatorEngagementRole_dbo_Role_RoleId">
+    <End Role="Role" Type="Self.Role" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OperatorEngagementRole" Type="Self.OperatorEngagementRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="OperatorEngagementRole">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PasswordPolicy_dbo_Engagement_EngagementId">
+    <End Role="Engagement" Type="Self.Engagement" Multiplicity="0..1" />
+    <End Role="PasswordPolicy" Type="Self.PasswordPolicy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Engagement">
+        <PropertyRef Name="EngagementId" />
+      </Principal>
+      <Dependent Role="PasswordPolicy">
+        <PropertyRef Name="EngagementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PasswordPolicy_dbo_Operator_OperatorId">
+    <End Role="Operator" Type="Self.Operator" Multiplicity="0..1" />
+    <End Role="PasswordPolicy" Type="Self.PasswordPolicy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operator">
+        <PropertyRef Name="OperatorId" />
+      </Principal>
+      <Dependent Role="PasswordPolicy">
+        <PropertyRef Name="OperatorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SamlIdpConfig_dbo_Engagement_EngagementId">
+    <End Role="Engagement" Type="Self.Engagement" Multiplicity="0..1" />
+    <End Role="SamlIdpConfig" Type="Self.SamlIdpConfig" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Engagement">
+        <PropertyRef Name="EngagementId" />
+      </Principal>
+      <Dependent Role="SamlIdpConfig">
+        <PropertyRef Name="EngagementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SamlIdpConfig_dbo_Operator_OperatorId">
+    <End Role="Operator" Type="Self.Operator" Multiplicity="0..1" />
+    <End Role="SamlIdpConfig" Type="Self.SamlIdpConfig" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operator">
+        <PropertyRef Name="OperatorId" />
+      </Principal>
+      <Dependent Role="SamlIdpConfig">
+        <PropertyRef Name="OperatorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="IdentityNewModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Application" EntityType="Self.Application" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplicationAccess" EntityType="Self.ApplicationAccess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Edition" EntityType="Self.Edition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EditionFeature" EntityType="Self.EditionFeature" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Engagement" EntityType="Self.Engagement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EngagementApplication" EntityType="Self.EngagementApplication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Operator" EntityType="Self.Operator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OperatorCredential" EntityType="Self.OperatorCredential" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OperatorEngagement" EntityType="Self.OperatorEngagement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OperatorEngagementApplicationRole" EntityType="Self.OperatorEngagementApplicationRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OperatorEngagementRole" EntityType="Self.OperatorEngagementRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PasswordPolicy" EntityType="Self.PasswordPolicy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SamlIdpConfig" EntityType="Self.SamlIdpConfig" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SamlSpConfig" EntityType="Self.SamlSpConfig" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_ApplicationAccess_dbo_SamlSpConfig_ApplicationAccessId" Association="Self.FK_dbo_ApplicationAccess_dbo_SamlSpConfig_ApplicationAccessId">
+      <End Role="SamlSpConfig" EntitySet="SamlSpConfig" />
+      <End Role="ApplicationAccess" EntitySet="ApplicationAccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_EditionFeature_dbo_Edition_EditionId" Association="Self.FK_dbo_EditionFeature_dbo_Edition_EditionId">
+      <End Role="Edition" EntitySet="Edition" />
+      <End Role="EditionFeature" EntitySet="EditionFeature" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Editions_dbo_Application_ApplicationId" Association="Self.FK_dbo_Editions_dbo_Application_ApplicationId">
+      <End Role="Application" EntitySet="Application" />
+      <End Role="Edition" EntitySet="Edition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Engagement_dbo_PasswordPolicy_PasswordPolicyId" Association="Self.FK_dbo_Engagement_dbo_PasswordPolicy_PasswordPolicyId">
+      <End Role="PasswordPolicy" EntitySet="PasswordPolicy" />
+      <End Role="Engagement" EntitySet="Engagement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Engagement_dbo_SamlIdpConfig_SamlIdpConfigId" Association="Self.FK_dbo_Engagement_dbo_SamlIdpConfig_SamlIdpConfigId">
+      <End Role="SamlIdpConfig" EntitySet="SamlIdpConfig" />
+      <End Role="Engagement" EntitySet="Engagement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_EngagementApplication_dbo_Application_ApplicationId" Association="Self.FK_dbo_EngagementApplication_dbo_Application_ApplicationId">
+      <End Role="Application" EntitySet="Application" />
+      <End Role="EngagementApplication" EntitySet="EngagementApplication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_EngagementApplication_dbo_Edition_EditionId" Association="Self.FK_dbo_EngagementApplication_dbo_Edition_EditionId">
+      <End Role="Edition" EntitySet="Edition" />
+      <End Role="EngagementApplication" EntitySet="EngagementApplication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_EngagementApplication_dbo_Engagement_EngagementId" Association="Self.FK_dbo_EngagementApplication_dbo_Engagement_EngagementId">
+      <End Role="Engagement" EntitySet="Engagement" />
+      <End Role="EngagementApplication" EntitySet="EngagementApplication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Operator_dbo_Engagement_MasterEngagementId" Association="Self.FK_dbo_Operator_dbo_Engagement_MasterEngagementId">
+      <End Role="Engagement" EntitySet="Engagement" />
+      <End Role="Operator" EntitySet="Operator" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Operator_dbo_PasswordPolicy_PasswordPolicyId" Association="Self.FK_dbo_Operator_dbo_PasswordPolicy_PasswordPolicyId">
+      <End Role="PasswordPolicy" EntitySet="PasswordPolicy" />
+      <End Role="Operator" EntitySet="Operator" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Operator_dbo_SamlIdpConfig_SamlIdpConfigId" Association="Self.FK_dbo_Operator_dbo_SamlIdpConfig_SamlIdpConfigId">
+      <End Role="SamlIdpConfig" EntitySet="SamlIdpConfig" />
+      <End Role="Operator" EntitySet="Operator" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_OperatorCredential_dbo_Operator_OperatorId" Association="Self.FK_dbo_OperatorCredential_dbo_Operator_OperatorId">
+      <End Role="Operator" EntitySet="Operator" />
+      <End Role="OperatorCredential" EntitySet="OperatorCredential" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_OperatorEngagement_dbo_Engagement_EngagementId" Association="Self.FK_dbo_OperatorEngagement_dbo_Engagement_EngagementId">
+      <End Role="Engagement" EntitySet="Engagement" />
+      <End Role="OperatorEngagement" EntitySet="OperatorEngagement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_OperatorEngagement_dbo_Operator_OperatorId" Association="Self.FK_dbo_OperatorEngagement_dbo_Operator_OperatorId">
+      <End Role="Operator" EntitySet="Operator" />
+      <End Role="OperatorEngagement" EntitySet="OperatorEngagement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_OperatorEngagementApplicationRole_dbo_Application_ApplicationId" Association="Self.FK_dbo_OperatorEngagementApplicationRole_dbo_Application_ApplicationId">
+      <End Role="Application" EntitySet="Application" />
+      <End Role="OperatorEngagementApplicationRole" EntitySet="OperatorEngagementApplicationRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_OperatorEngagementApplicationRole_dbo_Engagement_EngagementId" Association="Self.FK_dbo_OperatorEngagementApplicationRole_dbo_Engagement_EngagementId">
+      <End Role="Engagement" EntitySet="Engagement" />
+      <End Role="OperatorEngagementApplicationRole" EntitySet="OperatorEngagementApplicationRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_OperatorEngagementApplicationRole_dbo_Operator_OperatorId" Association="Self.FK_dbo_OperatorEngagementApplicationRole_dbo_Operator_OperatorId">
+      <End Role="Operator" EntitySet="Operator" />
+      <End Role="OperatorEngagementApplicationRole" EntitySet="OperatorEngagementApplicationRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_OperatorEngagementApplicationRole_dbo_Role_RoleId" Association="Self.FK_dbo_OperatorEngagementApplicationRole_dbo_Role_RoleId">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="OperatorEngagementApplicationRole" EntitySet="OperatorEngagementApplicationRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_OperatorEngagementRole_dbo_Engagement_EngagementId" Association="Self.FK_dbo_OperatorEngagementRole_dbo_Engagement_EngagementId">
+      <End Role="Engagement" EntitySet="Engagement" />
+      <End Role="OperatorEngagementRole" EntitySet="OperatorEngagementRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_OperatorEngagementRole_dbo_Operator_OperatorId" Association="Self.FK_dbo_OperatorEngagementRole_dbo_Operator_OperatorId">
+      <End Role="Operator" EntitySet="Operator" />
+      <End Role="OperatorEngagementRole" EntitySet="OperatorEngagementRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_OperatorEngagementRole_dbo_Role_RoleId" Association="Self.FK_dbo_OperatorEngagementRole_dbo_Role_RoleId">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="OperatorEngagementRole" EntitySet="OperatorEngagementRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PasswordPolicy_dbo_Engagement_EngagementId" Association="Self.FK_dbo_PasswordPolicy_dbo_Engagement_EngagementId">
+      <End Role="Engagement" EntitySet="Engagement" />
+      <End Role="PasswordPolicy" EntitySet="PasswordPolicy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PasswordPolicy_dbo_Operator_OperatorId" Association="Self.FK_dbo_PasswordPolicy_dbo_Operator_OperatorId">
+      <End Role="Operator" EntitySet="Operator" />
+      <End Role="PasswordPolicy" EntitySet="PasswordPolicy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SamlIdpConfig_dbo_Engagement_EngagementId" Association="Self.FK_dbo_SamlIdpConfig_dbo_Engagement_EngagementId">
+      <End Role="Engagement" EntitySet="Engagement" />
+      <End Role="SamlIdpConfig" EntitySet="SamlIdpConfig" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SamlIdpConfig_dbo_Operator_OperatorId" Association="Self.FK_dbo_SamlIdpConfig_dbo_Operator_OperatorId">
+      <End Role="Operator" EntitySet="Operator" />
+      <End Role="SamlIdpConfig" EntitySet="SamlIdpConfig" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
